@@ -19,4 +19,4 @@ In particular, the web page should:
   - Create a view component which is colored like the `colorCode`
 - Create a search which allows searching for any of the data in the table
 - Create a button that opens a modal. In this modal there should be another button to select any image from the file system. When you have selected the image, it will be displayed in the modal
-- Implement auto-refresh functionality which requests the resources from above every 60 minutes and updates the table with the new data
+- Implement auto-refresh functionality which requests the resources from above every 60 minutes and updates the table with the new data without reloading the web page
