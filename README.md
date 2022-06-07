@@ -1,8 +1,7 @@
 Hello dear web portal dev prospect!
 
 This repository is a playground for your submission.
-Before getting started, please make sure to create a new branch (named like your GitHub username) on which you commit and push your code regularly.
-See the task below.
+Before getting started, please hit the `Use this template` button to create a new repository on which you commit and push your code regularly for the task below.
 
 If you encounter a problem or have questions about the task, feel free to email me under <dbutemann@vero.de>.
 
