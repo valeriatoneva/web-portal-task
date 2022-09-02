@@ -37,8 +37,7 @@ The response will contain a json object, having the access token in json["oauth"
 
 E.g.:
 
-`
-<?php
+`<?php
 $curl = curl_init();
 curl_setopt_array($curl, [
   CURLOPT_URL => "https://api.baubuddy.de/index.php/login",
@@ -62,8 +61,7 @@ if ($err) {
 } else {
   echo $response;
 }
-?>
-`
+?>`
 
 Note that using this library is not a requirement, if you can do it in another way. 
 
