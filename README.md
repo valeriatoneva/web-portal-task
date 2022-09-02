@@ -39,9 +39,7 @@ E.g.:
 
 `
 <?php
-
 $curl = curl_init();
-
 curl_setopt_array($curl, [
   CURLOPT_URL => "https://api.baubuddy.de/index.php/login",
   CURLOPT_RETURNTRANSFER => true,
@@ -56,12 +54,9 @@ curl_setopt_array($curl, [
     "Content-Type: application/json"
   ],
 ]);
-
 $response = curl_exec($curl);
 $err = curl_error($curl);
-
 curl_close($curl);
-
 if ($err) {
   echo "cURL Error #:" . $err;
 } else {
