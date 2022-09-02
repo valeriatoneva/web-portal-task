@@ -20,3 +20,55 @@ In particular, the web page should:
 - Implement auto-refresh functionality which requests the data from above every 60 minutes and updates the table with the new data without reloading the web page
 - Outside the table, create a button that opens a modal. In this modal, there should be another button that allows you to select any image from the file system. When you have selected the image, it will be displayed in the modal
   - Note that this is not linked to the data from above
+
+### Hints
+You can use the curl library to authenticate, for example: 
+
+`curl --request POST \
+  --url https://api.baubuddy.de/index.php/login \
+  --header 'Authorization: Basic QVBJX0V4cGxvcmVyOjEyMzQ1NmlzQUxhbWVQYXNz' \
+  --header 'Content-Type: application/json' \
+  --data '{
+        "username":"365",
+        "password":"1"
+}'`
+
+The response will contain a json object, having the access token in json["oauth"]["access_token"]. For all subsequent calls this has to be added to the headers as Authorization: Bearer {access_token}.
+
+E.g.:
+
+`
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, [
+  CURLOPT_URL => "https://api.baubuddy.de/index.php/login",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "POST",
+  CURLOPT_POSTFIELDS => "{\n        \"username\":\"365\",\n        \"password\":\"1\"\n}",
+  CURLOPT_HTTPHEADER => [
+    "Authorization: Basic QVBJX0V4cGxvcmVyOjEyMzQ1NmlzQUxhbWVQYXNz",
+    "Content-Type: application/json"
+  ],
+]);
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+?>
+`
+
+Note that using this library is not a requirement, if you can do it in another way. 
+
