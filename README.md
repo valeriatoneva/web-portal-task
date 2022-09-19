@@ -21,10 +21,9 @@ In particular, the web page should:
 - Outside the table, create a button that opens a modal. In this modal, there should be another button that allows you to select any image from the file system. When you have selected the image, it will be displayed in the modal
   - Note that this is not linked to the data from above
 
+# Authorization
 
-### Authorization
-
-It's mandatory for your requests towers the API to be authorized. You can find the required request below:
+It is mandatory that your requests to the API are authorized. You can find the required request below:
 
 This is how it looks in `curl`:
 
@@ -39,9 +38,9 @@ curl --request POST \
 }'
 ```
 
-The response will contain a json object, having the access token in `json["oauth"]["access_token"]`. For all subsequent calls this has to be added to the request headers as `Authorization: Bearer {access_token}`.
+The response will contain a JSON object, having the access token in `json["oauth"]["access_token"]`. For all subsequent calls this has to be added to the request headers as `Authorization: Bearer {access_token}`.
 
-A possible implementation in `PHP` could be the following. You don't have to copy over this one, feel free to indivualize it or use a different network library.
+A possible implementation in `PHP` could be the following. You don't have to adopt this, you can also customize it or use another network library.
 
 ```php
 <?php
@@ -54,7 +53,7 @@ curl_setopt_array($curl, [
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS => "{\n        \"username\":\"365\",\n        \"password\":\"1\"\n}",
+  CURLOPT_POSTFIELDS => "{\"username\":\"365\", \"password\":\"1\"}",
   CURLOPT_HTTPHEADER => [
     "Authorization: Basic QVBJX0V4cGxvcmVyOjEyMzQ1NmlzQUxhbWVQYXNz",
     "Content-Type: application/json"
