@@ -1,6 +1,6 @@
 Hello dear web portal dev prospect!
 
-This repository is a playground for your submission.
+This repository is a playground for your submission which should use PHP in the backend and HTML/JS in the frontend.
 
 Before getting started, please hit the `Use this template` button to create a new repository on which you commit and push your code regularly for the task below. Once you are done, please mail us the link to your repository.
 
