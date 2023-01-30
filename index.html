@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Table</title>
+  </head>
+  <body>
+    <input class="search-input" type="text" placeholder="Search..." />
+    <table>
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Color Code</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <button class="add-task-btn">Add Task</button>
+
+    <!-- modal -->
+    <div class="modal">
+      <div class="modal-content">
+        <span class="close-modal-btn">&times;</span>
+        <h3>Select Image</h3>
+        <img class="selected-image" style="display: none;" />
+        <button class="select-image-btn">Select Image</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
