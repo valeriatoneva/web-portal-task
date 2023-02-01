@@ -16,6 +16,7 @@ async function getData() {
     dataset = await response.json();
     if (Array.isArray(dataset)) {
       populateTable(dataset);
+      refreshData();
     }
   }
 }
